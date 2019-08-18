@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap');
+
+body {
+    font-family: 'Overpass Mono', monospace;
+    color: white;
+    background-color: black;
+}
