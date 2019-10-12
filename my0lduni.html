@@ -4,9 +4,10 @@
     <head>
     
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>v-lens</title>
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap.min.js">
     <link rel="stylesheet" href="stylesheet.css">
     </head>
     
@@ -15,24 +16,41 @@
         <div class="container">
         <div class="header">valencia was in the old university grounds</div>
         
-        
-            <div class="text"><p>i never used to come here. back before the <a data-toggle="collapse" href="#rocket">rocket summer</a>, the old university grounds were intolerable to me. there were so many people all the time - beautiful, haughty fashion students, disorganized designers, asocial musicians. i wasn't asocial, before you ask. i was antisocial.</p>
-            <div id="rocket" class="collapse">That damnable season that came after all the world's best and brightest had lifted off into space and left us here. The heat was intolerable for two years, and is only calming now - but I digress.</div>
-            <p>now, i hike up just to get away from the city. now, there is almost no one here. i would kill to see a perfect woman, living her [perfect life], carrying armfuls of textiles down the overgrown paths. </p>
-            <p>So i imagine, as it was always very tempting to imagine. Perhaps, in reality, their lives were as imperfect as mine. Hard to believe - but I digress.</p>
-            <p>now, i need a walking stick to make it up here. round blue [eyes] the size of grapes have sprouted from my left thigh, and they're wreaking havoc on my muscles. but when i reach the battered tower and stand there silently, it is like the rest of the world has disappeared. i cannot hear the singing and fighting of the families that live in the thicket to the west, nor the howling rampages in the dogwoods to the east. </p>
-            <p>How can I possibly explain? Better not to try. They're growing everywhere now. I think it's getting worse. Nothing seems to stop them. Take one off - not an easy thing to do, in itself - and they grow back.</p>
-            <p>if i stand very, very still, i begin to hear the cry of a tui. in her song is the warbled, remixed remains of perhaps [(either: "a car alarm", "a fire engine", "a warning siren")]. i have not heard the real thing in ten years, so i cannot be sure.</p>
-
-(click: ?tuisong)[(replace: ?tuisong)[(either: "a car alarm", "a fire engine", "a warning siren")]</div>
+            <div class="text">
+            <p>i never used to come here. back before the <a data-toggle="collapse" href="#rocket">rocket summer<sup>1</sup></a>, the old university grounds were intolerable to me. there were so many people all the time - beautiful, haughty fashion students, disorganized designers, asocial musicians. i wasn't asocial, before you ask. i was antisocial.</p>
+            <div id="rocket" class="collapse"><p><sup>1</sup> That damnable season that came after all the world's best and brightest had lifted off into space and left us here. The heat was intolerable for two years, and is only calming now - but I digress.</p></div>
+            <p>now, i hike up just to get away from the city. now, there is almost no one here. i would kill to see a perfect woman, living her <a data-toggle="collapse" href="#perfect">perfect life<sup>2</sup></a>, carrying armfuls of textiles down the overgrown paths. </p>
+            <div id="perfect" class="collapse"><p><sup>2</sup> So i imagine, as it was always very tempting to imagine. Perhaps, in reality, their lives were as imperfect as mine. Hard to believe - but I digress.</p></div>
+            <p>now, i need a walking stick to make it up here. round blue <a data-toggle="collapse" href="#eyes">eyes<sup>3</sup></a> the size of grapes have sprouted from my left thigh, and they're wreaking havoc on my muscles. but when i reach the battered tower and stand there silently, it is like the rest of the world has disappeared. i cannot hear the singing and fighting of the families that live in the thicket to the west, nor the howling rampages in the dogwoods to the east. </p>
+            <div id="eyes" class="collapse"><p><sup>3</sup> How can I possibly explain? Better not to try. They're growing everywhere now. I think it's getting worse. Nothing seems to stop them. Take one off - not an easy thing to do, in itself - and they grow back.</p></div>
+            <p>if i stand very, very still, i begin to hear the cry of a tui. in her song is the warbled, remixed remains of perhaps <a onclick="swapsong" id="tuisong" href="">a car alarm</a>. i have not heard the real thing in ten years, so i cannot be sure.</p></div>
         
         <div class="footer">go back</div>
             
         </div>
         
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="companywebsite/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script>
+        
+            var tuisongs = [
+                "a car alarm",
+                "a fire engine",
+                "a warning siren"
+            ]
+            
+            var songnum = 0;
+
+            document.getElementById('tuisong').addEventListener('click', function swapsong() {
+                event.preventDefault();
+                songnum++;
+                if (songnum>2){songnum = 0;}
+                document.getElementById('tuisong').innerHTML = tuisongs[songnum];
+            });
+        
+        </script>
         
     </body>
     
