@@ -38,7 +38,14 @@
             var tuisongs = [
                 "a car alarm",
                 "a fire engine",
-                "a warning siren"
+                "a train door slamming shut",
+                "a warning siren",
+                "a particularly bassy car stereo",
+                "a bus screching to a halt",
+                "a honking semi-truck",
+                "a power drill",
+                "a church bell"
+                
             ]
             
             var songnum = 0;
@@ -46,7 +53,7 @@
             document.getElementById('tuisong').addEventListener('click', function swapsong() {
                 event.preventDefault();
                 songnum++;
-                if (songnum>2){songnum = 0;}
+                if (songnum>8){songnum = 0;}
                 document.getElementById('tuisong').innerHTML = tuisongs[songnum];
             });
         
