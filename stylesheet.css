@@ -38,3 +38,10 @@ body {
 .text {
     padding: 1vw;
 }
+
+a, #rocket, #perfect, #eyes {
+    color:#2faced;
+}
+a:hover {
+    color:white;
+}
