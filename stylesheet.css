@@ -39,7 +39,7 @@ body {
     padding: 1vw;
 }
 
-a, #rocket, #perfect, #eyes {
+a, .collapse {
     color:#2faced;
 }
 a:hover {
